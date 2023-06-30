@@ -20,3 +20,5 @@ smplx
 sklearn
 opendr
 chumpy
+torchgeometry
+scikit-learn

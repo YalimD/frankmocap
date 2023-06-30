@@ -23,6 +23,10 @@ Our whole body motion capture is based on our [FrankMocap paper](https://peninci
 
     # Set other render_type to use other renderers
     python -m demo.demo_frankmocap --input_path ./sample_data/single_totalbody.mp4 --out_dir ./mocap_output --renderer_type pytorch3d
+    
+    # Sinan Data
+    python -m demo.demo_frankmocap --input_path /media/yalimd/Depo/GitRepos/PhDThesis/OurDataset/Wave/1.mp4 --out_dir /media/yalimd/Depo/GitRepos/PhDThesis/OurDataset/Wave/Outputs/FrankMocap/1/ --save_bbox_output --save_mesh --no_display --use_smplx --no_video_out
+
 ```
 
 ## Run Demo with A Webcam Input

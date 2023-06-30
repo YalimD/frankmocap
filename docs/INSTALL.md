@@ -15,13 +15,18 @@
 
   # Install ffmpeg
   sudo apt-get install ffmpeg 
+  
+  # After this I needed to update the ffmpeg buuutt it failed stuff
+  # conda update ffmpeg
 
   # Install cuda 
   # Choose versions based on your system. For example:
   # conda install cudatoolkit=10.1 cudnn=7.6.0
 
   # Install pytorch and torchvision 
-  conda install -c pytorch pytorch==1.6.0 torchvision cudatoolkit=10.1
+  # conda install -c pytorch pytorch==1.6.0 torchvision cudatoolkit=10.1
+  # For compatibility with sm_86
+  conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
 
   # Install other required libraries
   pip install -r docs/requirements.txt
@@ -32,7 +37,7 @@
   - If you followed the versions mentioned above (pytorch 1.6.0, CUDA 10.1, on Linux), you may try the following:
   ```
     python -m pip install detectron2 -f \
-    https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch1.6/index.html
+    https://dl.fbaipublicfiles.com/detectron2/wheels/cu111/torch1.8/index.html
   ```
   - If it doesn't work, follow the instruction of [Detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md)
   
@@ -42,6 +47,8 @@
     ```
     pip install pytorch3d
     ```
+  - This only works for pytorch 1.13.0 and for cpu only
+  - The cuda version has incompatibilites with torchvision etc at torch 1.0.8
   - If it doesn't work, follow the instruction of [Pytorch3D](https://github.com/facebookresearch/pytorch3d/blob/master/INSTALL.md)
 
 - Install other third-party libraries + download pretrained models and sample data
